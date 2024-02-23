@@ -1,4 +1,4 @@
-import { MDXRemote } from "next-mdx-remote/rsc";
+import { MDXRemote } from "next-mdx-remote";
 
 export default function ActivityMdxPage() {
   // MDX text - can be from a local file, database, CMS, fetch, anywhere...
