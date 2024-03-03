@@ -1,4 +1,5 @@
 import Logo from "@/icons/Logo";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -20,16 +21,32 @@ export default function Footer() {
 
         {/* Product Section */}
         <div>
-          <h4 className="text-xs font-semibold text-gray-900 dark:text-gray-100">ພາລະບົດບາດ</h4>
+          <h4 className="text-xs font-semibold text-gray-900 dark:text-gray-100">ກ່ຽວກັບພະແນກ</h4>
           <div className="grid mt-3 space-y-3 text-sm">
-            {/* <p>
-              <a
+            <p>
+              <Link
                 className="inline-flex text-gray-600 gap-x-2 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                href="#"
+                href="/about/duty"
               >
-                Pricing
-              </a>
-            </p> */}
+                ພາລະບົດບາດ
+              </Link>
+            </p>
+            <p>
+              <Link
+                className="inline-flex text-gray-600 gap-x-2 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                href="/about/scope"
+              >
+                ຂອບເຂດສິດ
+              </Link>
+            </p>
+            <p>
+              <Link
+                className="inline-flex text-gray-600 gap-x-2 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                href="/about/structure"
+              >
+                ໂຄງປະກອບການຈັດຕັ້ງ
+              </Link>
+            </p>
             {/* More items */}
           </div>
         </div>
@@ -41,10 +58,9 @@ export default function Footer() {
         </div>
 
         {/* Resources Section */}
-        <div>
+        {/* <div>
           <h4 className="text-xs font-semibold text-gray-900 uppercase dark:text-gray-100">ເອກະສານເຜີຍແຜ່</h4>
-          {/* Resources links */}
-        </div>
+        </div> */}
 
         {/* Developers Section */}
         {/* <div>

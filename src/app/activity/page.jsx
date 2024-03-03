@@ -23,27 +23,31 @@ export default async function Activity() {
       </div>
       <div className="grid w-full grid-cols-3 max-w-[80rem] gap-10 p-10 mx-auto text-xl">
         {news?.map((item) => (
-          <Card key={item.id} isFooterBlurred className="w-full h-[300px]  ">
-            <CardHeader className="absolute z-10 flex-col items-start top-1">
-              <p className="font-bold uppercase text-tiny text-white/60">ວຽກງານການເຄື່ອນໄຫວ</p>
-              <h4 className="text-xl font-medium text-white/90">{item?.title}</h4>
-            </CardHeader>
-            <ImageNextUI removeWrapper alt="Relaxing app background" className="z-0 object-cover w-full h-full " src={item?.featuredImage?.url} />
-            <CardFooter className="absolute bottom-0 z-10 bg-black/40 border-t-1 border-default-600 dark:border-default-100">
-              <div className="flex items-center flex-grow gap-2">
-                <ImageNextUI alt="Breathing app icon" className="w-10 bg-black rounded-full h-11" src={item?.officer?.profileImage?.url} />
-                <div className="flex flex-col">
-                  <p className="text-tiny text-white/60">{item?.officer?.fullName}</p>
-                  <p className="text-tiny text-white/60">{item?.officer?.bio}</p>
+          <Link key={item.id} href={`/activity/${item.slug}`}>
+            <Card isFooterBlurred className="w-full h-[300px]  cursor-pointer ">
+              <CardHeader className="absolute z-10 flex-col items-start top-1">
+                <p className="font-bold uppercase text-tiny text-white/60">ວຽກງານການເຄື່ອນໄຫວ</p>
+                <h4 className="text-xl font-medium text-white/90">{item?.title}</h4>
+              </CardHeader>
+              <ImageNextUI removeWrapper alt="Relaxing app background" className="z-0 object-cover w-full h-full " src={item?.featuredImage?.url} />
+              <CardFooter className="absolute bottom-0 z-10 bg-black/40 border-t-1 border-default-600 dark:border-default-100">
+                <div className="flex items-center flex-grow gap-2">
+                  <ImageNextUI alt="Breathing app icon" className="w-10 bg-black rounded-full h-11" src={item?.officer?.profileImage?.url} />
+                  <div className="flex flex-col">
+                    <p className="text-tiny text-white/60">{item?.officer?.fullName}</p>
+                    <p className="text-tiny text-white/60">{item?.officer?.bio}</p>
+                  </div>
                 </div>
-              </div>
-              <Button radius="full" size="sm">
-                ອ່ານ
-              </Button>
-            </CardFooter>
-          </Card>
+                <Button radius="full" size="sm">
+                  ອ່ານ
+                </Button>
+              </CardFooter>
+            </Card>
+          </Link>
         ))}
       </div>
     </section>
   );
 }
+
+export const revalidate = 3600; // revalidate at most every hour

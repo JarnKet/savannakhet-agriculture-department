@@ -44,3 +44,44 @@ export async function getNews() {
     console.error(error);
   }
 }
+
+const getNewsDetailQuery = gql`
+  query BlogDetail($slug: String!) {
+    blog(where: { slug: $slug }) {
+      detail {
+        html
+      }
+      featuredImage {
+        url
+      }
+      officer {
+        fullName
+        bio
+        profileImage {
+          url
+        }
+      }
+      title
+    }
+  }
+`;
+
+export async function getNewsDetail(slug) {
+  // console.log(slug);
+  try {
+    const detail = hygraph
+      .request(getNewsDetailQuery, { slug })
+      .then((data) => {
+        // Handle successful response
+        return data.blog;
+      })
+      .catch((error) => {
+        // Handle error
+        console.error(error);
+      });
+    return detail;
+  } catch (error) {
+    // Handle error
+    console.error(error);
+  }
+}
