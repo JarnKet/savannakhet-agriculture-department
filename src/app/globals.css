@@ -37,3 +37,25 @@
     font-weight: bold;
   }
 }
+
+.hierarchy-chart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.node {
+  margin: 10px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.children {
+  display: flex;
+  justify-content: center;
+  /* border-left: 1px solid #aaa; */
+  margin-left: 10px;
+}
