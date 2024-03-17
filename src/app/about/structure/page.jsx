@@ -15,12 +15,12 @@ export default function Structure() {
           <Image src={"/structure_banner.png"} alt="duty hero" fill sizes={100} className="object-cover grayscale" />
         </div>
         <div className="absolute z-20 text-center text-white transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
-          <h1 className="text-4xl font-bold lg:text-8xl">ໂຄງຮ່າງການຈັດຕັ້ງ</h1>
+          <h1 className="w-full text-4xl font-bold lg:text-8xl">ໂຄງຮ່າງການຈັດຕັ້ງ</h1>
           <p className="mt-4 text-xl lg:text-2xl">ພະແນກກະສິກຳ ແລະ ປ່າໄມ້ ແຂວງສະຫວັນນະເຂດ</p>
         </div>
       </div>
 
-      <div className="max-w-[100rem] mx-auto scale-75">
+      <div className="max-w-[100rem] mx-auto scale-50 md:scale-75">
         <Node {...structureData} />
       </div>
 

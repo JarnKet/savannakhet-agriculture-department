@@ -45,13 +45,13 @@ export default function Header() {
   return (
     <Navbar shouldHideOnScroll onMenuOpenChange={setIsMenuOpen} maxWidth={"full"} className="fixed py-2 bg-transparent" isBlurred={true}>
       <NavbarContent>
-        <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} className="sm:hidden" />
+        <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} className="text-white sm:hidden" />
         <NavbarBrand>
           <Link href="/" className="gap-4 flexCenter">
             <Logo />
             <div>
-              <p className="font-bold text-white">ກະຊວງກະສິກຳ ແລະ ປ່າໄມ້</p>
-              <p className="font-bold text-white">ພະແນກກະສິກຳ ແລະ ປ່າໄມ້ແຂວງສະຫວັນນະເຂດ</p>
+              <p className="text-sm font-bold text-white md:text-base">ກະຊວງກະສິກຳ ແລະ ປ່າໄມ້</p>
+              <p className="text-sm font-bold text-white md:text-base">ພະແນກກະສິກຳ ແລະ ປ່າໄມ້ແຂວງສະຫວັນນະເຂດ</p>
             </div>
           </Link>
         </NavbarBrand>
@@ -113,14 +113,50 @@ export default function Header() {
         </NavbarItem> */}
       </NavbarContent>
 
-      <NavbarMenu>
-        {menuItems.map((item, index) => (
+      <NavbarMenu className="flex flex-col items-center justify-center gap-6 py-6 ">
+        {/* {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link color={index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"} className="w-full" href="#" size="lg">
               {item}
             </Link>
           </NavbarMenuItem>
-        ))}
+        ))} */}
+
+        <NavbarMenuItem>
+          <Link className="w-full text-3xl text-green-500" href="/" size="lg">
+            ໜ້າຫຼັກ
+          </Link>
+        </NavbarMenuItem>
+        <NavbarMenuItem>
+          <Link className="w-full text-3xl text-green-500" href="/about/duty" size="lg">
+            ພາລະບົດບາດ
+          </Link>
+        </NavbarMenuItem>
+        <NavbarMenuItem>
+          <Link className="w-full text-3xl text-green-500" href="/about/scope" size="lg">
+            ຂອບເຂດສິດ
+          </Link>
+        </NavbarMenuItem>
+        <NavbarMenuItem>
+          <Link className="w-full text-3xl text-green-500" href="/about/structure" size="lg">
+            ໂຄງປະກອບການຈັດຕັ້ງ
+          </Link>
+        </NavbarMenuItem>
+        <NavbarMenuItem>
+          <Link className="w-full text-3xl text-green-500" href="/activity" size="lg">
+            ວຽກງານເຄື່ອນໄຫວ
+          </Link>
+        </NavbarMenuItem>
+        <NavbarMenuItem>
+          <Link
+            className="w-full text-3xl text-green-500"
+            target="_blank"
+            href="https://www.maf.gov.la/%e0%ba%99%e0%ba%b4%e0%ba%95%e0%ba%b4%e0%ba%81%e0%ba%b3/"
+            size="lg"
+          >
+            ເອກະສານເຜີຍແຜ່
+          </Link>
+        </NavbarMenuItem>
       </NavbarMenu>
     </Navbar>
   );

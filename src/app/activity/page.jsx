@@ -21,7 +21,7 @@ export default async function Activity() {
           <p className="text-xl lg:text-2xl">ພະແນກກະສິກຳ ແລະ ປ່າໄມ້ ແຂວງສະຫວັນນະເຂດ</p>
         </div>
       </div>
-      <div className="grid w-full grid-cols-3 max-w-[80rem] gap-10 p-10 mx-auto text-xl">
+      <div className="grid w-full grid-cols-1 md:grid-cols-3 max-w-[80rem] gap-10 p-10 mx-auto text-xl">
         {news?.map((item) => (
           <Link key={item.id} href={`/activity/${item.slug}`}>
             <Card isFooterBlurred className="w-full h-[300px]  cursor-pointer ">

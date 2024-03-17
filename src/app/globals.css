@@ -7,25 +7,23 @@
     @apply flex items-center justify-center;
   }
 
-  .blogContent {
-    & > h1 {
-      @apply text-4xl font-bold;
-    }
-    & > h2 {
-      @apply text-2xl font-semibold;
-    }
-    & > h3 {
-      @apply text-xl font-semibold;
-    }
-    & > h4 {
-      @apply text-lg font-normal;
-    }
-    & > p {
-      @apply font-normal;
-    }
-    & > img {
-      @apply w-full;
-    }
+  .blog-content h1 {
+    @apply text-4xl font-bold;
+  }
+  .blog-content h2 {
+    @apply text-2xl font-semibold;
+  }
+  .blog-content h3 {
+    @apply text-xl font-semibold;
+  }
+  .blog-content h4 {
+    @apply text-lg font-normal;
+  }
+  .blog-content p {
+    @apply font-normal;
+  }
+  .blog-content img {
+    @apply w-full;
   }
 }
 

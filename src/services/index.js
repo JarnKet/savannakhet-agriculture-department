@@ -5,7 +5,7 @@ export const hygraph = new GraphQLClient(graphqlAPI);
 
 const getNewsQuery = gql`
   query Blogs {
-    blogs {
+    blogs(orderBy: createdAt_DESC) {
       createdAt
       id
       slug

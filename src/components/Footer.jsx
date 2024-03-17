@@ -1,7 +1,12 @@
 import Logo from "@/icons/Logo";
 import Link from "next/link";
 
-export default function Footer() {
+// Services
+import { getNews } from "@/services";
+
+export default async function Footer() {
+  const news = await getNews();
+
   return (
     <footer className="w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto">
       <div className="grid grid-cols-2 gap-6 mb-10 md:grid-cols-4 lg:grid-cols-5">
@@ -40,6 +45,15 @@ export default function Footer() {
         {/* ວຽກງານການເຄື່ອນໄຫວ */}
         <div>
           <h4 className="text-xs font-semibold text-gray-900 uppercase dark:text-gray-100">ວຽກງານການເຄື່ອນໄຫວ</h4>
+          <div className="grid mt-3 space-y-3 text-sm">
+            {news?.map((item) => (
+              <Link key={item.id} href={`/activity/${item.slug}`}>
+                <p className="inline-flex text-gray-600 gap-x-2 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
+                  {item?.title}
+                </p>
+              </Link>
+            ))}
+          </div>
         </div>
 
         <div>
