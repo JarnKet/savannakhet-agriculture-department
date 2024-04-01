@@ -45,6 +45,86 @@ export async function getNews() {
   }
 }
 
+const get3NewsQuery = gql`
+  query Blogs {
+    blogs(orderBy: createdAt_DESC, first: 3) {
+      createdAt
+      id
+      slug
+      title
+      featuredImage {
+        url
+      }
+      officer {
+        bio
+        fullName
+        profileImage {
+          url
+        }
+      }
+    }
+  }
+`;
+
+export async function get3News() {
+  try {
+    const news = hygraph
+      .request(get3NewsQuery)
+      .then((data) => {
+        // Handle successful response
+        return data.blogs;
+      })
+      .catch((error) => {
+        // Handle error
+        console.error(error);
+      });
+    return news;
+  } catch (error) {
+    // Handle error
+    console.error(error);
+  }
+}
+
+const get5NewsQuery = gql`
+  query Blogs {
+    blogs(orderBy: createdAt_DESC, first: 5) {
+      createdAt
+      id
+      slug
+      title
+      featuredImage {
+        url
+      }
+      officer {
+        bio
+        fullName
+        profileImage {
+          url
+        }
+      }
+    }
+  }
+`;
+
+export async function get5News() {
+  try {
+    const news = hygraph
+      .request(get5NewsQuery)
+      .then((data) => {
+        // Handle successful response
+        return data.blogs;
+      })
+      .catch((error) => {
+        // Handle error
+        console.error(error);
+      });
+    return news;
+  } catch (error) {
+    // Handle error
+    console.error(error);
+  }
+}
+
 const getNewsDetailQuery = gql`
   query BlogDetail($slug: String!) {
     blog(where: { slug: $slug }) {
