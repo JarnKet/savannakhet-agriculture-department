@@ -1,7 +1,6 @@
 "use client";
 
-import React from "react";
-import { useMediaQuery } from "@uidotdev/usehooks";
+import { useState, useEffect } from "react";
 
 import {
 	BarChart,
@@ -36,7 +35,11 @@ const data = [
 ];
 
 export default function StaffShow() {
-	const isSmallDevice = useMediaQuery("only screen and (max-width : 768px)");
+	const [isSmallDevice, setIsSmallDevice] = useState(false);
+
+	useEffect(() => {
+		setIsSmallDevice(window.matchMedia("(max-width: 768px)").matches);
+	}, []);
 
 	return (
 		<BarChart

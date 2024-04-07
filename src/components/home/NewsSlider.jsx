@@ -2,8 +2,7 @@
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-
-import { useMediaQuery } from "@uidotdev/usehooks";
+import { useState, useEffect } from "react";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -16,7 +15,12 @@ import "swiper/css/navigation";
 
 export default function NewsSlider({ data }) {
 	const router = useRouter();
-	const isSmallDevice = useMediaQuery("only screen and (max-width : 768px)");
+	// const isSmallDevice = window.matchMedia("(max-width: 768px)").matches;
+	const [isSmallDevice, setIsSmallDevice] = useState(false);
+
+	useEffect(() => {
+		setIsSmallDevice(window.matchMedia("(max-width: 768px)").matches);
+	}, []);
 
 	return (
 		<Swiper
@@ -25,6 +29,7 @@ export default function NewsSlider({ data }) {
 			centeredSlides={true}
 			grabCursor={true}
 			slidesPerView={isSmallDevice ? 1 : 3}
+			// slidesPerView={3}
 			spaceBetween={50}
 			pagination={{
 				type: "fraction",
