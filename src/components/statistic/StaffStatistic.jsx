@@ -8,7 +8,7 @@ export default function StaffStatistic() {
 	return (
 		<main className="relative flexCenter min-h-screen px-[32px]">
 			<Image
-				src={"/corn-field-bg.jpg"}
+				src={"/staff.jpg"}
 				fill
 				sizes="100%"
 				className="object-cover"
